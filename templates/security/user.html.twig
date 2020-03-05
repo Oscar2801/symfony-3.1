@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Users</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+            {% for user in listUser %}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    {% for roles in user.roles %}
+                        {{ roles }}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
